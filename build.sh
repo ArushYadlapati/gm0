@@ -28,8 +28,8 @@ fi
 # This helps avoid reinstalling when packages are already installed
 if [ ! -f .deps-installed ] || [ source/requirements.txt -nt .deps-installed ]; then
     echo "Installing/updating Python dependencies..."
-    pip install --upgrade pip
-    pip install -r source/requirements.txt
+    python3 -m pip install --upgrade pip
+    python3 -m pip install -r source/requirements.txt
     touch .deps-installed
 else
     echo "Python dependencies are up to date"
