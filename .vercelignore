@@ -1,0 +1,33 @@
+# Build dependencies and cache
+source/.doctrees/
+build/.doctrees/
+.deps-installed
+
+# Git and development files
+.git/
+.github/
+.vscode/
+.devcontainer/
+
+# Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Poetry files
+poetry.lock
+
+# Documentation source (we only need the built output)
+# Note: We actually need source/ for building, so don't ignore it
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
