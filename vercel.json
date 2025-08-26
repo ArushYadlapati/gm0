@@ -1,16 +1,37 @@
 {
   "build": {
     "env": {
-      "PYTHON_VERSION": "3.11.13"
+      "PYTHON_VERSION": "3.11.13",
+      "VERCEL": "1"
     }
   },
   "buildCommand": "./build.sh",
   "outputDirectory": "build/html",
-  "installCommand": "pip install --upgrade pip",
+  "installCommand": "python3 -m pip install --upgrade pip",
   "routes": [
     {
       "src": "/",
       "dest": "/index.html"
+    },
+    {
+      "src": "/index$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/search$",
+      "dest": "/search.html"
+    },
+    {
+      "src": "/genindex$",
+      "dest": "/genindex.html"
+    },
+    {
+      "src": "/docs/(.*)",
+      "dest": "/docs/$1"
+    },
+    {
+      "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))$",
+      "dest": "/$1"
     },
     {
       "src": "/(.*)",
